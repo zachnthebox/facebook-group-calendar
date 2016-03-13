@@ -1,7 +1,7 @@
 import google from 'googleapis';
 import RSVP from 'rsvp';
 
-const calendarId = '0kursvumsm92prumlvevig14k4@group.calendar.google.com';
+const calendarId = process.env.google_calendar_id;
 
 export function getEvents(options) {
   let calendar = google.calendar('v3');

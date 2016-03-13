@@ -1,7 +1,7 @@
 import FB from 'fb';
 
-const group_id = process.env.groupId;
-const access_token = process.env.facebookAccessToken;
+const group_id = process.env.facebook_group_id;
+const access_token = process.env.facebook_access_token;
 
 FB.setAccessToken(access_token);
 
