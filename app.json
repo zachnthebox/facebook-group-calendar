@@ -1,0 +1,23 @@
+{
+  "name": "Facebook Group Calendar",
+  "desecription": "Post Facebook group messages from a google calendar",
+  "repository": "https://github.com/zachnthebox/facebook-group-calendar",
+  "env": {
+    "google_client_email": {
+      "description": "The Google API service email"
+    },
+    "google_calendar_id": {
+      "description": "The ID of the Google Calendar"
+    },
+    "google_private_key": {
+      "description": "The pem key file for Google Calendar API"
+    },
+    "facebook_group_id": {
+      "description": "The Facebook Group Id"
+    },
+    "facebook_access_token": {
+      "description": "The Facebook Access Token with group permissions"
+    }
+  },
+  "addons": ["scheduler"]
+}
