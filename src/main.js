@@ -2,8 +2,15 @@ import authorize_to_google from './authorize-to-google';
 import { get_group_events, get_wyl_events } from './calendar-events';
 import send_wyl_messages from './send-wyl-messages';
 import send_group_messages from './send-group-messages';
+import moment from 'moment';
+
+const MONDAY = 1;
 
 authorize_to_google();
 
-get_wyl_events().then(send_wyl_messages);
-get_group_events().then(send_group_messages);
+let today = moment();
+
+if (today.weekday() === MONDAY) {
+  get_wyl_events().then(send_wyl_messages);
+  get_group_events().then(send_group_messages);
+}
