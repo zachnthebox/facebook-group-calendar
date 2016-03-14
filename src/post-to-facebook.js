@@ -9,8 +9,10 @@ export default function(message) {
   FB.api(`/${group_id}/feed`, 'POST', {
     message: message
   }, function(res) {
-    if (!res || res.error) {
-      throw err;
+    if (!res) {
+      throw false;
+    } else if (res.error) {
+      throw res.error;
     }
     console.log('Post Id: ' + res.id);
   });
