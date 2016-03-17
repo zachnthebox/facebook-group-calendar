@@ -8,7 +8,7 @@ export default function(events) {
   if (events.length) {
     let event = events[0];
     let date = moment(event.start.dateTime);
-    let formattedDate = date.format('LL');
+    let formattedDate = date.format('LLL');
     let message = 'Where Is Group This Week?';
     message += `\n${event.summary} - ${formattedDate}\n${event.location}`;
     postToFacebook(message);

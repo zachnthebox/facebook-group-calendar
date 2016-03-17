@@ -36,3 +36,14 @@ export function get_group_events() {
     q: 'group',
   });
 }
+
+export function get_other_events() {
+  return getEvents({
+    calendarId: calendarId,
+    timeMin: (new Date()).toISOString(),
+    maxResults: 10,
+    singleEvents: true,
+    orderBy: 'startTime',
+    q: 'activity',
+  });
+}
