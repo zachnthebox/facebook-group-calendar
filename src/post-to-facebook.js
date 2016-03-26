@@ -5,9 +5,13 @@ const access_token = process.env.facebook_access_token;
 
 FB.setAccessToken(access_token);
 
-export default function(message) {
+export default function(message, link = {}) {
   FB.api(`/${group_id}/feed`, 'POST', {
-    message: message
+    message,
+    link: link.url,
+    caption: link.caption,
+    description: link.description,
+    name: link.name,
   }, function(res) {
     if (!res) {
       throw false;

@@ -10,7 +10,10 @@ export default function(events) {
     let date = moment(event.start.dateTime);
     let formattedDate = date.format('LLL');
     let message = 'Where Is Group This Week?';
-    message += `\n${event.summary} - ${formattedDate}\n${event.location}`;
-    postToFacebook(message);
+    postToFacebook(message, {
+      url: 'https://www.google.com/maps/place/' + encodeURIComponent(event.location),
+      name: event.summary,
+      caption: formattedDate,
+    });
   }
 }
