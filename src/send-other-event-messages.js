@@ -13,7 +13,7 @@ const changedLastWeek = event => {
   return updated.isAfter(previousMonday) && !created.isAfter(previousMonday);
 };
 
-const createdLastWeek = event => moment(event.created).isAfter(previousMonday);
+const createdLastWeek = event => moment(event.created).isAfter(previousMonday) && moment(event.created).isBefore();
 
 export default function(events) {
   if (!events || !events.length) {
