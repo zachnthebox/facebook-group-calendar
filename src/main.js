@@ -3,7 +3,9 @@ import { get_group_events, get_wyl_events, get_other_events } from './calendar-e
 import send_wyl_messages from './send-wyl-messages';
 import send_group_messages from './send-group-messages';
 import send_other_event_messages from './send-other-event-messages';
-import moment from 'moment';
+import moment from 'moment-timezone';
+
+moment.tz.setDefault('America/New_York');
 
 const MONDAY = 1;
 
