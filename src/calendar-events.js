@@ -1,5 +1,6 @@
 import google from 'googleapis';
 import RSVP from 'rsvp';
+import moment from 'moment';
 
 const calendarId = process.env.google_calendar_id;
 
@@ -18,7 +19,7 @@ export function getEvents(options) {
 export function get_wyl_events() {
   return getEvents({
     calendarId: calendarId,
-    timeMin: (new Date()).toISOString(),
+    timeMin: moment().format(),
     maxResults: 10,
     singleEvents: true,
     orderBy: 'startTime',
@@ -29,7 +30,7 @@ export function get_wyl_events() {
 export function get_group_events() {
   return getEvents({
     calendarId: calendarId,
-    timeMin: (new Date()).toISOString(),
+    timeMin: moment().format(),
     maxResults: 10,
     singleEvents: true,
     orderBy: 'startTime',
@@ -40,7 +41,8 @@ export function get_group_events() {
 export function get_other_events() {
   return getEvents({
     calendarId: calendarId,
-    timeMin: (new Date()).toISOString(),
+    timeMin: moment().format(),
+    timeMax: moment().add(2, 'weeks').format(),
     maxResults: 10,
     singleEvents: true,
     orderBy: 'startTime',
