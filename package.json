@@ -20,12 +20,10 @@
     "babel-cli": "^6.5.1",
     "babel-preset-es2015": "^6.5.0",
     "fb": "^1.0.2",
-    "googleapis": "^2.1.7",
+    "googleapis": "5.1.0",
     "moment": "^2.12.0",
     "moment-timezone": "^0.5.3",
+    "request": "^2.72.0",
     "rsvp": "^3.2.1"
-  },
-  "devDependencies": {
-    "moment-timezone": "^0.5.3"
   }
 }
