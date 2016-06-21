@@ -1,4 +1,5 @@
 import postToFacebook from './post-to-facebook';
+import postToGroupMe from './post-to-group-me';
 import moment from 'moment';
 
 export default function(events) {
@@ -15,5 +16,6 @@ export default function(events) {
       name: event.summary,
       caption: formattedDate,
     });
+    postToGroupMe(`${event.summary}\n${formattedDate}\n${event.location}`);
   }
 }
