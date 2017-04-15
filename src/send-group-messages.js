@@ -16,6 +16,6 @@ export default function(events) {
       name: event.summary,
       caption: formattedDate,
     });
-    postToGroupMe(`${event.summary}\n${formattedDate}\n${event.location}`);
+    //postToGroupMe(`${event.summary}\n${formattedDate}\n${event.location}`);
   }
 }
